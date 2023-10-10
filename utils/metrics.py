@@ -8,11 +8,13 @@ import warnings
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 import numpy as np
 import torch
 
 from utils import TryExcept, threaded
-
+plt.rcParams['font.family'] = ['Droid Sans Fallback']
+plt.rcParams['axes.unicode_minus'] = False
 
 def fitness(x):
     # Model fitness as a weighted combination of metrics
