@@ -14,10 +14,8 @@ import torch
 
 from utils import TryExcept, threaded
 
-font_dirs = ['../myfont/SimHei.ttf', ]
-font_files = font_manager.findSystemFonts(fontpaths=font_dirs)
-font_list = font_manager.createFontList(font_files)
-font_manager.fontManager.ttflist.extend(font_list)
+font_dir = '../myfont/SimHei.ttf'
+font_manager.fontManager.addfont(font_dir)
 
 plt.rcParams['font.family'] = 'SimHei'
 plt.rcParams['axes.unicode_minus'] = False

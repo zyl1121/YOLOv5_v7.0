@@ -31,10 +31,8 @@ matplotlib.rc('font', **{'size': 11})
 matplotlib.use('Agg')  # for writing to files only
 
 
-font_dirs = ['/my/custom/font/dir', ]
-font_files = font_manager.findSystemFonts(fontpaths=font_dirs)
-font_list = font_manager.createFontList(font_files)
-font_manager.fontManager.ttflist.extend(font_list)
+font_dir = '../myfont/SimHei.ttf'
+font_manager.fontManager.addfont(font_dir)
 
 plt.rcParams['font.family'] = 'SimHei'
 sn.set(font='SimHei')
