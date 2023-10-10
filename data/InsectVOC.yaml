@@ -1,4 +1,4 @@
-path: ../input/insect-with-annotation
+path: ./insect-with-annotation
 train: train.txt
 val: val.txt
 test: test.txt
