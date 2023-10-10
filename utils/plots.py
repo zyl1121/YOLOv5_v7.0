@@ -40,6 +40,13 @@ plt.rcParams['font.family'] = 'SimHei'
 sn.set(font='SimHei')
 
 
+font_dir = './myfont/SimHei.ttf'
+font_manager.fontManager.addfont(font_dir)
+
+plt.rcParams['font.family'] = 'SimHei'
+sn.set(font='SimHei')
+
+
 class Colors:
     # Ultralytics color palette https://ultralytics.com/
     def __init__(self):
