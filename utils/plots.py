@@ -12,6 +12,7 @@ from pathlib import Path
 import cv2
 import matplotlib
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as font_manager
 import numpy as np
 import pandas as pd
 import seaborn as sn
@@ -28,8 +29,14 @@ from utils.metrics import fitness
 RANK = int(os.getenv('RANK', -1))
 matplotlib.rc('font', **{'size': 11})
 matplotlib.use('Agg')  # for writing to files only
-plt.rcParams['font.family'] = ['Droid Sans Fallback']
-plt.rcParams['axes.unicode_minus'] = False
+
+
+font_dirs = ['/my/custom/font/dir', ]
+font_files = font_manager.findSystemFonts(fontpaths=font_dirs)
+font_list = font_manager.createFontList(font_files)
+font_manager.fontManager.ttflist.extend(font_list)
+
+plt.rcParams['font.family'] = 'SimHei'
 sn.set(font='SimHei')
 
 

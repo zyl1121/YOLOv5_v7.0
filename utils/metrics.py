@@ -13,8 +13,15 @@ import numpy as np
 import torch
 
 from utils import TryExcept, threaded
-plt.rcParams['font.family'] = ['Droid Sans Fallback']
+
+font_dirs = ['../myfont/SimHei.ttf', ]
+font_files = font_manager.findSystemFonts(fontpaths=font_dirs)
+font_list = font_manager.createFontList(font_files)
+font_manager.fontManager.ttflist.extend(font_list)
+
+plt.rcParams['font.family'] = 'SimHei'
 plt.rcParams['axes.unicode_minus'] = False
+
 
 def fitness(x):
     # Model fitness as a weighted combination of metrics
