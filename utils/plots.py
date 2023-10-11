@@ -30,10 +30,12 @@ RANK = int(os.getenv('RANK', -1))
 matplotlib.rc('font', **{'size': 11})
 matplotlib.use('Agg')  # for writing to files only
 
-
-font_dir = './myfont/SimHei.ttf'
+# Load font file
+module_path = os.path.dirname(__file__)
+font_dir = os.path.join(module_path, 'myfont', 'SimHei.ttf')
 font_manager.fontManager.addfont(font_dir)
 
+# Set font in Matplotlib
 plt.rcParams['font.family'] = 'SimHei'
 sn.set(font='SimHei')
 
