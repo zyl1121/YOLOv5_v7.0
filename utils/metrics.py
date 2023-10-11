@@ -2,7 +2,7 @@
 """
 Model validation metrics
 """
-
+import os
 import math
 import warnings
 from pathlib import Path
@@ -14,11 +14,13 @@ import torch
 
 from utils import TryExcept, threaded
 
-font_dir = './myfont/SimHei.ttf'
+# Load font file
+module_path = os.path.dirname(__file__)
+font_dir = os.path.join(os.path.split(module_path)[0], 'myfont', 'SimHei.ttf')
 font_manager.fontManager.addfont(font_dir)
 
+# Set font in Matplotlib
 plt.rcParams['font.family'] = 'SimHei'
-plt.rcParams['axes.unicode_minus'] = False
 
 
 def fitness(x):
